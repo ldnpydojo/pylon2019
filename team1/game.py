@@ -16,6 +16,7 @@ def new_enemy():
     enemy = Actor('enemy_black2.png')
     enemies.append(enemy)
     enemy.x = random.randint(0, WIDTH)
+    enemy.speed = random.randint(5, 10)
     enemy.top = 0
 
 
@@ -39,7 +40,7 @@ def update():
     if random.randint(0, 30) == 0:
         new_enemy()
     for enemy in enemies:
-        enemy.y += 10
+        enemy.y += enemy.speed
         crash()
 
     for bullet in bullets:
