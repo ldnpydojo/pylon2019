@@ -23,3 +23,8 @@ def update():
     if keyboard.right:
         ship.x += 15
     enemy.y += 10
+    crash()
+
+def crash():
+    if enemy.colliderect(ship):
+        sounds.death.play()
