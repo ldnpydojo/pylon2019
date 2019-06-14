@@ -23,12 +23,7 @@ https://pygame-zero.readthedocs.io
 
 ### To install the latest dev version:
 
-    pip install -e git+git@github.com:lordmauve/pgzero.git#egg=pgzero
-
-or
-
-    git clone git@github.com:lordmauve/pgzero.git
-    pip install pgzero[repl]
+    pip install -e git+git@github.com:lordmauve/pgzero.git#egg=pgzero[repl]
 
 
 This allows:
