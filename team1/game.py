@@ -42,9 +42,14 @@ def update():
     for enemy in enemies:
         enemy.y += enemy.speed
         crash()
+        if enemy.y > HEIGHT:
+            enemies.remove(enemy)
 
     for bullet in bullets:
-    	bullet.y -= 10
+        if bullet.y < 0:
+            bullets.remove(bullet)
+        else:
+           bullet.y -= 10
 
     if ship.left > WIDTH:
         ship.left = 0
@@ -52,10 +57,11 @@ def update():
     if ship.right < 0:
         ship.right = WIDTH
 
+
 def crash():
     for enemy in enemies:
         if enemy.colliderect(ship):
-            sounds.death.play()
+            sounds.game_over.play()
     for bullet in bullets:
         for enemy in enemies:
             if bullet.colliderect(enemy):
