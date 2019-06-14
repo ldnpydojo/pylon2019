@@ -15,7 +15,7 @@ enemies = []
 def new_enemy():
     enemy = Actor('enemy_black2.png')
     enemies.append(enemy)
-    enemy.x = random.randint(0, WIDTH)
+    enemy.centre = random.randint(0, WIDTH)
     enemy.top = 0
 
 
@@ -27,7 +27,6 @@ def draw():
     ship.draw()
     for enemy in enemies:
         enemy.draw()
-
     for bullet in bullets:
     	bullet.draw()
 
@@ -36,32 +35,17 @@ def update():
         ship.x -= 15
     if keyboard.right:
         ship.x += 15
-    if random.randint(0, 30) == 0:
-        new_enemy()
+    new_enemy()
     for enemy in enemies:
         enemy.y += 10
-        crash()
+        crash(enemy)
 
     for bullet in bullets:
     	bullet.y -= 10
 
-    if ship.left > WIDTH:
-        ship.left = 0
-
-    if ship.right < 0:
-        ship.right = WIDTH
-
-def crash():
-    for enemy in enemies:
-        if enemy.colliderect(ship):
-            sounds.death.play()
-    for bullet in bullets:
-        for enemy in enemies:
-            if bullet.colliderect(enemy):
-                sounds.explosion.play()
-                enemies.remove(enemy)
-                bullets.remove(bullet)
-            
+def crash(enemy):
+    if enemy.colliderect(ship):
+        sounds.death.play()
 
 def on_key_down(key):
     if key == keys.SPACE:
