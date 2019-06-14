@@ -28,10 +28,14 @@ def update():
     if keyboard.right:
         ship.x += 15
     enemy.y += 10
+    crash()
 
     for bullet in bullets:
     	bullet.y -= 10
 
+def crash():
+    if enemy.colliderect(ship):
+        sounds.death.play()
 
 def on_key_down(key):
     if key == keys.SPACE:
