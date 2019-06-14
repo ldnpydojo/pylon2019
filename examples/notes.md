@@ -1,3 +1,11 @@
+
+## Get started
+
+    pip install pgzero
+
+    pgzrun game.py
+
+
 Builtins for:
 
 - Screen
@@ -8,6 +16,7 @@ Builtins for:
 - Clock
 
 
+## Docs
 
 https://pygame-zero.readthedocs.io
 
