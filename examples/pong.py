@@ -27,17 +27,19 @@ def update(unicode):
     if not 0 < ball.y < HEIGHT:
         ball_direction[1] *= -1
 
-def on_key_down(unicode):
-    jump = 50
-    if unicode == 'q':
+    check_keys()
+
+def check_keys():
+    jump = 5
+    if keyboard.q:
         player_one.y -= jump
-    elif unicode == 'a':
+    elif keyboard.a:
         player_one.y += jump
 
-    elif unicode == 'w':
+    elif keyboard.w:
         player_two.y -= jump
-    elif unicode == 's':
+    elif keyboard.s:
         player_two.y += jump
-    else:
-        sys.exit(0)
+    # else:
+    #     sys.exit(0)
 
