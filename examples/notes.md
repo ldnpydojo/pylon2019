@@ -1,23 +1,20 @@
-zero-boilerplate
+Builtins for:
 
-pgzrun blank.py
-
-start immediately
-HEIGHT / WIDTH
-
-draw() function
-- fill
-- actor
-
-event
-- on_key_down
+Screen
+Rect / Actor
+images, sounds and music
+Clock
+Events: mouse, keyboard
+Animations
 
 
-magic vars (no need to import)
-globals aren't banned
+
+https://pygame-zero.readthedocs.io
+
+
+To install the latest dev version:
 
 pip install -e git+git@github.com:lordmauve/pgzero.git#egg=pgzero
 
-builtin categories
-
-
+git clone git@github.com:lordmauve/pgzero.git
+pip install pgzero[repl]

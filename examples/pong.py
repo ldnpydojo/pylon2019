@@ -1,19 +1,20 @@
-import sys
-
 HEIGHT = 600
 WIDTH = 900
+
+RED = (128, 0, 0)
+GREEN = (0, 128, 0)
 
 player_one = Rect((20, 20), (50, 200))
 player_two = Rect((WIDTH - 70, 20), (50, 200))
 
 ball = Rect((WIDTH / 2, HEIGHT / 2), (50, 50))
-ball_direction = [5, 15]
+ball_direction = [15, -20]
 
 def draw():
-    screen.fill((128, 0, 0))
-    screen.draw.filled_rect(player_one, (0, 128, 0))
-    screen.draw.filled_rect(player_two, (0, 128, 0))
-    screen.draw.filled_rect(ball, (0, 128, 0))
+    screen.fill(RED)
+    screen.draw.filled_rect(player_one, GREEN)
+    screen.draw.filled_rect(player_two, GREEN)
+    screen.draw.filled_rect(ball, GREEN)
 
 def update(unicode):
     ball.move_ip(*ball_direction)
@@ -30,7 +31,7 @@ def update(unicode):
     check_keys()
 
 def check_keys():
-    jump = 5
+    jump = 15
     if keyboard.q:
         player_one.y -= jump
     elif keyboard.a:
@@ -40,6 +41,3 @@ def check_keys():
         player_two.y -= jump
     elif keyboard.s:
         player_two.y += jump
-    # else:
-    #     sys.exit(0)
-
