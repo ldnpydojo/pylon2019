@@ -30,12 +30,12 @@ def draw():
     for bullet in bullets:
     	bullet.draw()
 
-def update():
+def update(tick):
     if keyboard.left:
         ship.x -= 15
     if keyboard.right:
         ship.x += 15
-    if random.randint(0, 30) == 0:
+    if tick % 100 == 0:
         new_enemy()
     for enemy in enemies:
         enemy.y += 10

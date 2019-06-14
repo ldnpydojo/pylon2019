@@ -15,7 +15,7 @@ enemies = []
 def new_enemy():
     enemy = Actor('enemy_black2.png')
     enemies.append(enemy)
-    enemy.x = random.randint(0, WIDTH)
+    enemy.centre = random.randint(0, WIDTH)
     enemy.top = 0
 
 
@@ -35,8 +35,7 @@ def update():
         ship.x -= 15
     if keyboard.right:
         ship.x += 15
-    if random.randint(0, 30) == 0:
-        new_enemy()
+    new_enemy()
     for enemy in enemies:
         enemy.y += 10
         crash(enemy)
