@@ -1,20 +1,27 @@
 Builtins for:
 
-Screen
-Rect / Actor
-images, sounds and music
-Clock
-Events: mouse, keyboard
-Animations
+- Screen
+- Rect / Actor
+- images, sounds and music
+- Events: mouse, keyboard
+- Animations
+- Clock
 
 
 
 https://pygame-zero.readthedocs.io
 
 
-To install the latest dev version:
+### To install the latest dev version:
 
-pip install -e git+git@github.com:lordmauve/pgzero.git#egg=pgzero
+    pip install -e git+git@github.com:lordmauve/pgzero.git#egg=pgzero
 
-git clone git@github.com:lordmauve/pgzero.git
-pip install pgzero[repl]
+or
+
+    git clone git@github.com:lordmauve/pgzero.git
+    pip install pgzero[repl]
+
+
+This allows:
+
+    pgzrun --repl game.py
