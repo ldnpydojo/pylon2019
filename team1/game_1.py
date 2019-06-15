@@ -35,8 +35,8 @@ def update(tick):
         ship.x -= 15
     if keyboard.right:
         ship.x += 15
-    if tick % 100 == 0:
-        new_enemy()
+
+    new_enemy()
     for enemy in enemies:
         enemy.y += 10
         crash(enemy)
